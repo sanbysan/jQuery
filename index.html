@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<!--
+Author: Sandra Morawska
+Email: sandra.morawska@gmail.com
+-->
+	<head>
+		<title>jQuery</title>
+		<meta charset="UTF-8">
+		<link type="text/css" rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link href="https://fonts.googleapis.com/css?family=Fascinate" rel="stylesheet"> 
+	</head>
+	<body>
+		<header>
+			<h1>BLUE SKY AIRLINES<img src="img/plane.png" alt="Plane"/></h1>
+		</header>
+		<div id="filters">
+			<p class="filter-sale">SALE</p>
+			<p class="filter-new">NEW</p>
+		</div>
+		<div id="content">
+			<div class="destination-container sale" data-price="150">
+				<h2>Fly to Paris, France</h2>
+				<img src="img/paris.jpg" alt="Paris"/>
+				<a class="button" href="#">150$</a>
+				<form autocomplete="off">Tickets:
+					<input type="number" class="quantity" value="1"/>
+				</form>
+				<p>Total price:<span class="total"> 150$</span></p>
+				<h4>DETAILS</h4>
+				<p class="details">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."</p>
+			</div>
+			<div class="destination-container new" data-price="100">
+				<h2>Fly to Warsaw, Poland</h2>
+				<img src="img/warsaw.jpg" alt="Paris"/>
+				<a class="button" href="#">100$</a>
+				<form autocomplete="off">Tickets:
+					<input type="number" class="quantity" value="1"/>
+				</form>
+				<p>Total price:<span class="total"> 100$</span></p>
+				<h4>DETAILS</h4>
+				<p class="details">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."</p>
+			</div>
+			<div class="destination-container" data-price="130">
+				<h2>Fly to Stockholm, Sweden</h2>
+				<img src="img/stockholm.jpg" alt="Paris"/>
+				<a class="button" href="#">130$</a>
+				<form autocomplete="off">Tickets:
+					<input type="number" class="quantity" value="1"/>
+				</form>
+				<p>Total price:<span class="total"> 130$</span></p>
+				<h4>DETAILS</h4>
+				<p class="details">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."</p>
+			</div>
+			<div class="destination-container new" data-price="180">
+				<h2>Fly to Rome, Italy</h2>
+				<img src="img/rome.jpg" alt="Paris"/>
+				<a class="button" href="#">180$</a>
+				<form autocomplete="off">Tickets:
+					<input type="number" class="quantity" value="1"/>
+				</form>
+				<p>Total price:<span class="total"> 180$</span></p>
+				<h4>DETAILS</h4>
+				<p class="details">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."</p>
+			</div>
+			<div class="destination-container" data-price="300">
+				<h2>Fly to New York, USA</h2>
+				<img src="img/ny.jpg" alt="Paris"/>
+				<a class="button" href="#">300$</a>
+				<form autocomplete="off">Tickets:
+					<input type="number" class="quantity" value="1"/>
+				</form>
+				<p>Total price:<span class="total"> 300$</span></p>
+				<h4>DETAILS</h4>
+				<p class="details">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."</p>
+			</div>
+			<div class="destination-container sale" data-price="120">
+				<h2>Fly to Berlin, Germany</h2>
+				<img src="img/berlin.jpg" alt="Paris"/>
+				<a class="button" href="#">120$</a>
+				<form autocomplete="off">Tickets:
+					<input type="number" class="quantity" value="1"/>
+				</form>
+				<p>Total price:<span class="total"> 120$</span></p>
+				<h4>DETAILS</h4>
+				<p class="details">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."</p>
+			</div>
+			
+		</div>
+		<a id="arrow-up" href="#"><img src="img/arrow-up.png" alt="Arrow up"/></a>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="js/script.js"></script>
+	</body>
+</html>
