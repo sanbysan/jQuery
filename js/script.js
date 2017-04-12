@@ -1,26 +1,40 @@
 $(document).ready(function() {
+	var $content = $('#content');
 	$('.filter-sale').click(filterSaleButtonHandler);
 	$('.filter-new').click(filterNewButtonHandler);
 	$('.button').mouseenter(buyNowHandler);
 	$('.button').mouseleave(showPriceHandler);
-	$('.quantity').keyup(totalKeyUpHandler);
-	details.mouseenter(showDetailsHandler);
-	details.mouseleave(hideDetailsHandler);
+	$('.quantity').bind('keyup mouseup', totalKeyUpHandler);
+	$content.mouseover(showDetailsHandler);
+	$content.mouseout(hideDetailsHandler);
 	$(window).scroll(windowScrollHandler);	
 
 })
 
+var offset = 200;
+var duration = 400;
+
 var filterSaleButtonHandler = function () {
-	$(this).css({'background-color': 'pink'});
-	$('.filter-new').css({'background-color': '#eee'});
+	var $this = $(this);
 	$('.highlihted').removeClass('highlihted');
-	$('.destination-container.sale').addClass('highlihted');
+	if($this.css('background-color') === 'rgb(255, 192, 203)') { // przycisk sale był przycisniety 
+		$this.css('background-color', '#eee');
+	} else { // przycisk sale nie był przycisniety 
+		$this.css('background-color', 'pink'); 
+		$('.filter-new').css('background-color', '#eee');
+		$('.destination-container.sale').addClass('highlihted');
+	}
 }
 var filterNewButtonHandler = function () {
-	$(this).css({'background-color': 'pink'});
-	$('.filter-sale').css({'background-color': '#eee'});
+	var $this = $(this);
 	$('.highlihted').removeClass('highlihted');
-	$('.destination-container.new').addClass('highlihted');
+	if($this.css('background-color') === 'rgb(255, 192, 203)' ) {
+		$this.css('background-color', '#eee');
+	} else {
+		$(this).css('background-color', 'pink');
+		$('.filter-sale').css('background-color', '#eee');
+		$('.destination-container.new').addClass('highlihted');
+	}
 }
 
 var buyNowHandler = function () {
@@ -36,23 +50,25 @@ var showPriceHandler = function () {
 var totalKeyUpHandler = function () {
 	var price = +$(this).closest('.destination-container').data('price');
 	var quantity = +$(this).val();
-	var total = $(this).parent().siblings('p').find('.total');///////????????????????????????????????????
+	var total = $(this).parent().siblings('p').find('.total');
 	total.text(" " + price * quantity +"$");
 }
 
-
-var details = $('.destination-container').find('h4');
-
-var showDetailsHandler = function (){
-	$(this).siblings('.details').fadeIn();
+var showDetailsHandler = function (event){
+	var $target = $(event.target);
+	if ($target.is('.destination-container h4')) {
+		$target.siblings('.details').fadeIn();
+	}
 }
-var hideDetailsHandler = function (){
-	$(this).siblings('.details').fadeOut();
+var hideDetailsHandler = function (event){
+	var $target = $(event.target);
+	if ($target.is('.destination-container h4')) {
+		$target.siblings('.details').fadeOut();
+	}
 }
 
 	//Back to top
-var offset = 200;
-var duration = 400;
+
 var windowScrollHandler = function (){
 	if ($(this).scrollTop() > offset) {
 		$('#arrow-up').fadeIn(duration);
