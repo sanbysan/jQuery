@@ -15,21 +15,19 @@ var offset = 200;
 var duration = 400;
 
 var filterSaleButtonHandler = function () {
-	var $this = $(this);
 	$('.highlihted').removeClass('highlihted');
-	if($this.css('background-color') === 'rgb(255, 192, 203)') { // przycisk sale był przycisniety 
-		$this.css('background-color', '#eee');
+	if($(this).css('background-color') === 'rgb(255, 192, 203)') { // przycisk sale był przycisniety 
+		$(this).css('background-color', '#eee');
 	} else { // przycisk sale nie był przycisniety 
-		$this.css('background-color', 'pink'); 
+		$(this).css('background-color', 'pink'); 
 		$('.filter-new').css('background-color', '#eee');
 		$('.destination-container.sale').addClass('highlihted');
 	}
 }
 var filterNewButtonHandler = function () {
-	var $this = $(this);
 	$('.highlihted').removeClass('highlihted');
-	if($this.css('background-color') === 'rgb(255, 192, 203)' ) {
-		$this.css('background-color', '#eee');
+	if($(this).css('background-color') === 'rgb(255, 192, 203)' ) {
+		$(this).css('background-color', '#eee');
 	} else {
 		$(this).css('background-color', 'pink');
 		$('.filter-sale').css('background-color', '#eee');
